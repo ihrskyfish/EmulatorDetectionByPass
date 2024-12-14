@@ -1,5 +1,12 @@
+本仓库是对源仓库进行中文解说,而不是进行翻译.使用机器翻译成中文的效果基本精确了
+
+
+
+
 # Emulator Detection Bypass steps
 Download and setup emulator with any SDK version 12 or below with playstore of x86_64 arch.
+
+
 
 # Magisk image flashing[^1]   
 * Download and extract rootAVD repo from this [Link](https://github.com/newbit1/rootAVD)
