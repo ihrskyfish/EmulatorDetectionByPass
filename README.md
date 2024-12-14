@@ -6,8 +6,6 @@
 # Emulator Detection Bypass steps
 Download and setup emulator with any SDK version 12 or below with playstore of x86_64 arch.
 
-
-
 # Magisk image flashing[^1]   
 * Download and extract rootAVD repo from this [Link](https://github.com/newbit1/rootAVD)
 * Open terminal on your pc and navigate to above extracted dir.
@@ -29,6 +27,8 @@ Download and setup emulator with any SDK version 12 or below with playstore of x
 * Once done your emulator will have magisk installed in it,start the application it will ask permission which will then reboot your device.
 * Once device has rebooted go to magisk settings and enable zygisk setting and reboot your device from magisk options.
 * You are now done flashing/rooting your deivce.
+这一段是利用了另一个github仓库对安卓进行root,该仓库的作用是 使用脚本快速对 android studio中自带的安卓模拟器进行root.对于一般的安卓模拟器,一般自带开启root的功能.对于真实机器,该仓库不能直接使用.如果安卓系统已经root了,这一段可以跳过
+
 # Setting up termux on device.
 * Download latest apk from termux repo release section based on your emulator arch type [Link](https://github.com/termux/termux-app/releases)
 * Open the app and enter command
@@ -45,10 +45,13 @@ Download and setup emulator with any SDK version 12 or below with playstore of x
   ```
   and grant storage permission.
 * Your termux is not ready to use.
+  这一段的作用是 更新软件包索引( pkg update)和升级软件包( pkg upgrade) ,让 termux请求 获取存储权限(  termux-setup-storage )
+  
   
 # Additional Apps/tools that are needed
 * Download and install root explorer apk.
-  
+下载使用root权限的文件浏览器. root explorer 是使用root的文件浏览器.这不是必须的,只是为了方便用户操作.便于修改和浏览文件
+
 # Setting up frida and other packages in termux[^2]
 * Enter command
   ```
@@ -76,6 +79,9 @@ export FRIDA_CORE_DEVKIT=/sdcard/devkit/
   ```
   pkg install frida-python
   ```
+
+
+
 # Frida server installation flow
 * Download latest version of frida-server based on device arc type(file name containes server and android) [Link](https://github.com/frida/frida/releases)
 * Extract the zip and move the file in you emulator by draging and droping.
